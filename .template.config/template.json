@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "@chrsparre",
+    "classifications": [
+        "Orleans"
+    ],
+    "identity": "OrleansStarterTemplate",
+    "name": "A Microsoft Orleans starter template",
+    "defaultName": "OrleansPlayground",
+    "shortName": "orleansstartertemplate",
+    "preferNameDirectory": true,
+    "sourceName": "OrleansStarterTemplate",
+    "tags": {
+        "language": "C#",
+        "type": "solution"
+    },
+    "sources": [
+        {
+            "source": "./.template",
+            "target": "./"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackageType>Template</PackageType>
+        <PackageVersion>0.0.1-alpha001</PackageVersion>
+        <PackageId>sparreio.Templates.OrleansStarterTemplate</PackageId>
+        <Title>Orleans Starter Template</Title>
+        <Authors>Christian Sparre</Authors>
+        <Description></Description>
+        <PackageTags>dotnet-new;templates;orleans</PackageTags>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>    
+        <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+
+</Project>
