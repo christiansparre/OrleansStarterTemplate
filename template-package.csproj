@@ -2,8 +2,9 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.0.1-alpha001</PackageVersion>
+        <PackageVersion>0.0.1-alpha002</PackageVersion>
         <PackageId>sparreio.Templates.OrleansStarterTemplate</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Title>Orleans Starter Template</Title>
         <Authors>Christian Sparre</Authors>
         <Description></Description>
@@ -17,7 +18,8 @@
 
     <ItemGroup>    
         <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
-        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />        
+        <None Include="LICENSE" Pack="true" PackagePath=""/>
         <Compile Remove="**\*" />
     </ItemGroup>
 
