@@ -11,13 +11,11 @@ Install using
 ```
 dotnet new install sparreio.Templates.OrleansStarterTemplate
 ```
+It is available on [nuget.org](https://www.nuget.org/packages/sparreio.Templates.OrleansStarterTemplate)
 
 ## Use
 
 ```
 dotnet new orleansstartertemplate
 ```
- 
-#N NuGet
 
-It is available on [nuget.org](https://www.nuget.org/packages/sparreio.Templates.OrleansStarterTemplate)
