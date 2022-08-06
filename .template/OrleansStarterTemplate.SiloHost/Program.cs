@@ -4,7 +4,7 @@ using Orleans.Hosting;
 
 var builder = Host.CreateDefaultBuilder();
 
-builder.UseOrleans(silo =>
+builder.UseOrleans((ctx, silo) =>
 {
     silo.UseLocalhostClustering();
     silo.Configure<ClusterOptions>(options =>

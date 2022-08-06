@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Orleans;
 using Orleans.Configuration;
+using Orleans.Hosting;
 using OrleansStarterTemplate.Grains.Interfaces;
 
 var builder = Host.CreateDefaultBuilder();

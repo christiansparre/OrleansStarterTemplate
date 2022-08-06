@@ -6,8 +6,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Orleans.Runtime.Abstractions" Version="4.0.0-preview1" />
-		<PackageReference Include="Microsoft.Orleans.Sdk" Version="4.0.0-preview1" />
+		<PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="4.0.0-preview2" />
+		<PackageReference Include="Microsoft.Orleans.Sdk" Version="4.0.0-preview2" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\OrleansStarterTemplate.Grains.Interfaces\OrleansStarterTemplate.Grains.Interfaces.csproj" />

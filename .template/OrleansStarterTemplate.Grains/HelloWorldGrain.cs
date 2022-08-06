@@ -17,14 +17,14 @@ public class HelloWorldGrain : IHelloWorldGrain, IGrainBase
 
     public Task<HelloMessage> Hello(string name)
     {
-        _logger.Info("Received hello call from {Name}", name);
+        _logger.LogInformation("Received hello call from {Name}", name);
 
         return Task.FromResult(new HelloMessage($"Hello {name}, {this.GetPrimaryKeyString()} says hi! 👋", DateTimeOffset.UtcNow));
     }
 
     public Task OnActivateAsync(CancellationToken token)
     {
-        _logger.Info("Hello grain {GrainId} was activated", GrainContext.GrainId);
+        _logger.LogInformation("Hello grain {GrainId} was activated", GrainContext.GrainId);
         return Task.CompletedTask;
     }
 
