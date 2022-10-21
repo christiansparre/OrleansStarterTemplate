@@ -2,7 +2,7 @@
 
 A very simple starter template with the projects needed to get started exploring Orleans
 
-NOTE: It uses Orleans 4.0-preview2 and .NET 6
+NOTE: It uses Orleans 7.0.0-rc2 and .NET 7 RC2
 
 ## Install
 
