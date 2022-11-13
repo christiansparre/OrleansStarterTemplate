@@ -16,6 +16,6 @@ It is available on [nuget.org](https://www.nuget.org/packages/sparreio.Templates
 ## Use
 
 ```
-dotnet new orleansstartertemplate
+dotnet new orleansstartertemplate -n MyOrleansProject
 ```
 
