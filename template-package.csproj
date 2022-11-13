@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.0.1-alpha004</PackageVersion>
+        <PackageVersion>1.0.0</PackageVersion>
         <PackageId>sparreio.Templates.OrleansStarterTemplate</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Title>Orleans Starter Template</Title>
