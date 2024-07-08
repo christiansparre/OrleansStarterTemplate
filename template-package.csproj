@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>8.0.0</PackageVersion>
         <PackageId>sparreio.Templates.OrleansStarterTemplate</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Title>Orleans Starter Template</Title>
