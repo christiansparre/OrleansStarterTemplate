@@ -1,19 +1,17 @@
-﻿using Microsoft.Extensions.Hosting;
-using Orleans.Configuration;
-using Orleans.Hosting;
+﻿using OrleansStarterTemplate.SiloHost.Infrastructure.HealthChecks;
 
-var builder = Host.CreateDefaultBuilder();
+var builder = WebApplication.CreateBuilder(args);
 
-builder.UseOrleans((ctx, silo) =>
-{
-    silo.UseLocalhostClustering();
-    silo.Configure<ClusterOptions>(options =>
-    {
-        options.ClusterId = "Local";
-        options.ServiceId = "OrleansStarterTemplate";
-    });
-});
+builder.AddServiceDefaults();
+
+builder.AddKeyedAzureTableClient("clustering");
+builder.UseOrleans();
+
+builder.Services.AddHealthChecks()
+    .AddCheck<GrainHealthCheck>("GrainHealth", tags: ["live"]);
 
 var host = builder.Build();
+
+host.MapDefaultEndpoints();
 
 await host.RunAsync();
