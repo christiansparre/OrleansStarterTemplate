@@ -26,10 +26,25 @@ else
 
 var silhost = builder.AddProject<Projects.OrleansStarterTemplate_SiloHost>("silohost")
     .WithReference(orleans)
-    .WithHttpHealthCheck("/alive");
+    .WithHttpHealthCheck("/alive")
+    .PublishAsAzureContainerApp((infrastructure, app) =>
+    {
+        var container = app.Template.Containers[0];
+        
+        ArgumentNullException.ThrowIfNull(container.Value);
+
+        // Change CPU memory allocations
+        //container.Value.Resources.Cpu = 2;
+        //container.Value.Resources.Memory = "4Gi";
+
+        // Change scale settings
+        //app.Template.Scale.MinReplicas = 2;
+        //app.Template.Scale.MaxReplicas = 2;
+    });
 
 builder.AddProject<Projects.OrleansStarterTemplate_WebClient>("webclient")
     .WithReference(orleans.AsClient())
+    .WithExternalHttpEndpoints()
     .WaitFor(silhost);
 
 builder.Build().Run();

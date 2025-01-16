@@ -7,8 +7,8 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Title>Orleans Starter Template</Title>
         <Authors>Christian Sparre</Authors>
-        <Description>A very simple starter template with the projects needed to get started exploring Orleans</Description>
-        <PackageTags>dotnet-new;templates;orleans</PackageTags>
+        <Description>A simple starter template with the projects needed to get started exploring Orleans, Azpire and Azure Container Apps</Description>
+        <PackageTags>dotnet-new;templates;orleans;aspire;azure-container-apps</PackageTags>
         <PackageProjectUrl>https://github.com/christiansparre/OrleansStarterTemplate</PackageProjectUrl>
         <RepositoryUrl>https://github.com/christiansparre/OrleansStarterTemplate</RepositoryUrl>
         <IncludeContentInPack>true</IncludeContentInPack>
