@@ -1,15 +1,28 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var storage = builder
-    .AddAzureStorage("storage")
-    .RunAsEmulator(resourceBuilder => resourceBuilder.WithContainerName("azurite").WithLifetime(ContainerLifetime.Persistent));
+    .AddAzureStorage("storage");
 
-var clusteringTable = storage.AddTables("clustering");
+var tableStorage = storage.AddTables("default");
 
 var orleans = builder
     .AddOrleans("starter-template")
-    .WithClusterId(Guid.NewGuid().ToString())
-    .WithClustering(clusteringTable);
+    .WithGrainStorage("Default", tableStorage)
+    .WithReminders(tableStorage);
+
+if (builder.ExecutionContext.IsPublishMode)
+{
+    orleans = orleans
+         .WithClustering(tableStorage);
+}
+else
+{
+    orleans = orleans
+         .WithDevelopmentClustering();
+
+    storage
+         .RunAsEmulator(resourceBuilder => resourceBuilder.WithContainerName("azurite").WithLifetime(ContainerLifetime.Persistent));
+}
 
 var silhost = builder.AddProject<Projects.OrleansStarterTemplate_SiloHost>("silohost")
     .WithReference(orleans)

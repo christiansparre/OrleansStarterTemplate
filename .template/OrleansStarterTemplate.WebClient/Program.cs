@@ -1,13 +1,18 @@
-using Orleans.Configuration;
 using OrleansStarterTemplate.WebClient.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddKeyedAzureTableClient("clustering");
+builder.AddKeyedAzureTableClient("default");
 
-builder.UseOrleansClient();
+builder.UseOrleansClient(clientBuilder =>
+{
+    if (builder.Environment.IsDevelopment())
+    {
+        clientBuilder.UseLocalhostClustering();
+    }
+});
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

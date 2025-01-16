@@ -10,6 +10,8 @@
 		<PackageReference Include="Aspire.Azure.Data.Tables" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Orleans.Clustering.AzureStorage" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Orleans.Persistence.AzureStorage" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Orleans.Reminders.AzureStorage" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Orleans.Server" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Orleans.Sdk" Version="9.0.1" />
 	</ItemGroup>
