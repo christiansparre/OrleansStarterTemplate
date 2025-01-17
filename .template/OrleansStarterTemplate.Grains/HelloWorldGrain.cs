@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using Orleans;
-using Orleans.Runtime;
 using OrleansStarterTemplate.Grains.Interfaces;
 
 namespace OrleansStarterTemplate.Grains;
