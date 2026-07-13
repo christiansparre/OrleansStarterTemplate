@@ -1,17 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Aspire.Azure.Data.Tables" Version="9.3.1" />
-		<PackageReference Include="Microsoft.Orleans.Clustering.AzureStorage" Version="9.1.2" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
-		<PackageReference Include="Microsoft.Orleans.Client" Version="9.1.2" />
-		<PackageReference Include="Microsoft.Orleans.Sdk" Version="9.1.2" />
+		<PackageReference Include="Aspire.Azure.Data.Tables" Version="13.4.6" />
+		<PackageReference Include="Microsoft.Orleans.Clustering.AzureStorage" Version="10.2.1" />
+		<PackageReference Include="Microsoft.Orleans.Client" Version="10.2.1" />
+		<PackageReference Include="Microsoft.Orleans.Sdk" Version="10.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>

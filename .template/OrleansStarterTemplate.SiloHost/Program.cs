@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddKeyedAzureTableClient("default");
+builder.AddKeyedAzureTableServiceClient("default");
 
 builder.UseOrleans(siloBuilder =>
 {

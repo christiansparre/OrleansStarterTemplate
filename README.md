@@ -28,9 +28,9 @@ See docs: [Deploy a .NET Aspire project to Azure Container Apps using the Azure 
 _Note to self_
 
 ```
-dotnet pack /p:PackageVersion=9.1.2 .\template-package.csproj
+dotnet pack /p:PackageVersion=10.0.0 .\template-package.csproj
 ```
 
 ```
-dotnet new install C:\******\github\christiansparre\OrleansStarterTemplate\bin\Release\sparreio.Templates.OrleansStarterTemplate.8.0.0.nupkg
+dotnet new install C:\******\github\christiansparre\OrleansStarterTemplate\bin\Release\sparreio.Templates.OrleansStarterTemplate.10.0.0.nupkg
 ```
