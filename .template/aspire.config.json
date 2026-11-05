@@ -1,0 +1,9 @@
+{
+  "appHost": {
+    "path": "OrleansStarterTemplate.AppHost/OrleansStarterTemplate.AppHost.csproj"
+  },
+  "sdk": {
+    "version": "17.0.0-preview.1.26554.23"
+  },
+  "channel": "daily"
+}
