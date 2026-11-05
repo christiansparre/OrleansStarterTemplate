@@ -28,7 +28,7 @@ See docs: [Deploy a .NET Aspire project to Azure Container Apps using the Azure 
 _Note to self_
 
 ```
-dotnet pack /p:PackageVersion=9.1.2 .\template-package.csproj
+dotnet pack /p:PackageVersion=10.4.2 .\template-package.csproj
 ```
 
 ```
