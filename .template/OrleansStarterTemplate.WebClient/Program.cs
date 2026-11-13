@@ -8,6 +8,9 @@ builder.AddKeyedAzureTableServiceClient("default");
 
 builder.UseOrleansClient(clientBuilder =>
 {
+    // Propagate trace context through grain calls so they show up as spans in the Aspire dashboard
+    clientBuilder.AddActivityPropagation();
+
     if (builder.Environment.IsDevelopment())
     {
         clientBuilder.UseLocalhostClustering();
