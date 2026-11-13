@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="aspire.config.json" />
+    <File Path="Directory.Build.props" />
+    <File Path="nuget.config" />
+  </Folder>
+  <Project Path="OrleansStarterTemplate.AppHost/OrleansStarterTemplate.AppHost.csproj" />
+  <Project Path="OrleansStarterTemplate.Grains.Interfaces/OrleansStarterTemplate.Grains.Interfaces.csproj" />
+  <Project Path="OrleansStarterTemplate.Grains/OrleansStarterTemplate.Grains.csproj" />
+  <Project Path="OrleansStarterTemplate.ServiceDefaults/OrleansStarterTemplate.ServiceDefaults.csproj" />
+  <Project Path="OrleansStarterTemplate.SiloHost/OrleansStarterTemplate.SiloHost.csproj" />
+  <Project Path="OrleansStarterTemplate.WebClient/OrleansStarterTemplate.WebClient.csproj" />
+</Solution>
