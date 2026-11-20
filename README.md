@@ -1,6 +1,6 @@
 # Orleans Starter Template
 
-A simple starter template with the projects needed to get started exploring Orleans, Aspire and Azure Container Apps
+A `dotnet new` template with the projects you need to start exploring [Microsoft Orleans](https://learn.microsoft.com/dotnet/orleans/), [Aspire](https://aspire.dev) and Azure Container Apps.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ A simple starter template with the projects needed to get started exploring Orle
   ```
   aspire update --self
   ```
-- A container runtime for the Azurite storage emulator: Docker, Podman or WSL containers (`wslc`). Docker and Podman are preferred if installed. For WSL containers you need WSL `3.0.4` or newer:
+- A container runtime for the Azurite storage emulator: Docker, Podman or WSL containers (`wslc`). Docker and Podman are used if installed. WSL containers need WSL `3.0.4` or newer:
 
   ```
   wsl --update
@@ -18,41 +18,55 @@ A simple starter template with the projects needed to get started exploring Orle
 
 ## Install
 
-Install using
-
 ```
 dotnet new install sparreio.Templates.OrleansStarterTemplate
 ```
-It is available on [nuget.org](https://www.nuget.org/packages/sparreio.Templates.OrleansStarterTemplate)
 
-## Use
+The template is available on [nuget.org](https://www.nuget.org/packages/sparreio.Templates.OrleansStarterTemplate). Run the same command again to update to the latest version.
+
+## Create a project
 
 ```
 dotnet new orleansstartertemplate -n MyOrleansProject
-```
-
-This creates a `MyOrleansProject.slnx` solution (the XML solution format, supported by Visual Studio, Rider and the .NET CLI). Run it with
-
-```
+cd MyOrleansProject
 aspire run
 ```
 
-Shared build settings (target framework, nullable, warnings as errors) live in `Directory.Build.props`.
+`aspire run` starts the AppHost and opens the Aspire dashboard, where you can find the web client, the silo and their logs, traces and metrics.
 
-## Deploy using Aspire and Azure Container Apps
+## What's included
 
-The `AppHost` is somewhat prepared to be published and deployed to container apps, adjust as needed
+| Project | Description |
+| --- | --- |
+| `MyOrleansProject.AppHost` | Aspire AppHost. Wires up Azure Table Storage (Azurite locally), the Orleans cluster, the silo and the web client |
+| `MyOrleansProject.SiloHost` | Orleans silo with grain storage and reminders in Azure Table Storage, and a grain health check |
+| `MyOrleansProject.WebClient` | Blazor Server app with an Orleans client. The Weather page calls a grain |
+| `MyOrleansProject.Grains` | Sample grains: `HelloWorldGrain` and `WeatherForecastsGrain` (which also registers a reminder) |
+| `MyOrleansProject.Grains.Interfaces` | Grain interfaces and serializable types shared by the silo and the client |
+| `MyOrleansProject.ServiceDefaults` | Shared Aspire service defaults: OpenTelemetry, health checks, service discovery and HTTP resilience |
 
-See docs: [Deploy a .NET Aspire project to Azure Container Apps using the Azure Developer CLI (in-depth guide)](https://learn.microsoft.com/en-us/dotnet/aspire/deployment/azure/aca-deployment-azd-in-depth?tabs=windows)
+Also included:
 
-# Releasing
+- A `MyOrleansProject.slnx` solution (the XML solution format, supported by Visual Studio, Rider and the .NET CLI)
+- `Directory.Build.props` with shared build settings: target framework, implicit usings, nullable and warnings as errors
+- Orleans metrics and distributed traces (including grain calls) exported to the Aspire dashboard through OpenTelemetry
 
-_Note to self_
+### Local development
+
+When running locally, the silo and client use localhost clustering, and the Azurite emulator runs as a persistent container named `azurite`, so stored grain state and reminders survive restarts. Remove the container to start from a clean state.
+
+## Deploy to Azure Container Apps
+
+The AppHost is prepared to be published and deployed to Azure Container Apps. In publish mode the cluster uses Azure Table Storage for clustering, and the silo's container app can be tuned (CPU, memory and scaling) in `AppHost/Program.cs`. Adjust as needed.
+
+See [Deploy an Aspire project to Azure Container Apps using the Azure Developer CLI](https://learn.microsoft.com/en-us/dotnet/aspire/deployment/azure/aca-deployment-azd-in-depth?tabs=windows).
+
+## Uninstall
 
 ```
-dotnet pack /p:PackageVersion=10.4.2 .\template-package.csproj
+dotnet new uninstall sparreio.Templates.OrleansStarterTemplate
 ```
 
-```
-dotnet new install C:\******\github\christiansparre\OrleansStarterTemplate\bin\Release\sparreio.Templates.OrleansStarterTemplate.8.0.0.nupkg
-```
+## License
+
+[MIT](https://github.com/christiansparre/OrleansStarterTemplate/blob/main/LICENSE)
