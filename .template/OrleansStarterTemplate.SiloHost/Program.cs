@@ -4,10 +4,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddKeyedAzureTableClient("default");
+builder.AddKeyedAzureTableServiceClient("default");
 
 builder.UseOrleans(siloBuilder =>
 {
+    // Propagate trace context through grain calls so they show up as spans in the Aspire dashboard
+    siloBuilder.AddActivityPropagation();
+
     if (builder.Environment.IsDevelopment())
     {
         siloBuilder.UseLocalhostClustering();

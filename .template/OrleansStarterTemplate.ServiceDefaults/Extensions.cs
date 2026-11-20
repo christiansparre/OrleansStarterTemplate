@@ -53,11 +53,15 @@ namespace Microsoft.Extensions.Hosting
                 {
                     metrics.AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
-                        .AddRuntimeInstrumentation();
+                        .AddRuntimeInstrumentation()
+                        // Orleans metrics (grains, messaging, membership, ...)
+                        .AddMeter("Microsoft.Orleans");
                 })
                 .WithTracing(tracing =>
                 {
                     tracing.AddSource(builder.Environment.ApplicationName)
+                        // Orleans spans (grain calls, runtime, lifecycle, storage). Requires AddActivityPropagation() on the silo/client builder
+                        .AddSource("Microsoft.Orleans.*")
                         .AddAspNetCoreInstrumentation()
                         // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
                         //.AddGrpcClientInstrumentation()

@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net11.0</TargetFramework>
         <PackageType>Template</PackageType>
-        <PackageVersion>9.0.0</PackageVersion>
+        <PackageVersion>10.4.2</PackageVersion>
         <PackageId>sparreio.Templates.OrleansStarterTemplate</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Title>Orleans Starter Template</Title>
@@ -20,8 +20,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
-        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+        <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.aspire\**;**\*.user" />
+        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.aspire\**;**\*.user" />
         <None Include="LICENSE" Pack="true" PackagePath="" />
         <None Include="README.md" Pack="true" PackagePath="" />
         <Compile Remove="**\*" />

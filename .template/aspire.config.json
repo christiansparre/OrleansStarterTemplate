@@ -1,0 +1,8 @@
+{
+  "appHost": {
+    "path": "OrleansStarterTemplate.AppHost/OrleansStarterTemplate.AppHost.csproj"
+  },
+  "sdk": {
+    "version": "17.0.0"
+  }
+}

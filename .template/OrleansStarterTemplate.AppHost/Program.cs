@@ -24,7 +24,7 @@ else
          .RunAsEmulator(resourceBuilder => resourceBuilder.WithContainerName("azurite").WithLifetime(ContainerLifetime.Persistent));
 }
 
-var silhost = builder.AddProject<Projects.OrleansStarterTemplate_SiloHost>("silohost")
+var silhost = builder.AddDotnetProject("silohost", "../OrleansStarterTemplate.SiloHost/OrleansStarterTemplate.SiloHost.csproj")
     .WithReference(orleans)
     .WithHttpHealthCheck("/alive")
     .PublishAsAzureContainerApp((infrastructure, app) =>
@@ -42,7 +42,7 @@ var silhost = builder.AddProject<Projects.OrleansStarterTemplate_SiloHost>("silo
         //app.Template.Scale.MaxReplicas = 2;
     });
 
-builder.AddProject<Projects.OrleansStarterTemplate_WebClient>("webclient")
+builder.AddDotnetProject("webclient", "../OrleansStarterTemplate.WebClient/OrleansStarterTemplate.WebClient.csproj")
     .WithReference(orleans.AsClient())
     .WithExternalHttpEndpoints()
     .WaitFor(silhost);
