@@ -20,8 +20,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
-        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**" />
+        <Content Include="**\.template.config\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.aspire\**;**\*.user" />
+        <Content Include="**\.template\**\*" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.aspire\**;**\*.user" />
         <None Include="LICENSE" Pack="true" PackagePath="" />
         <None Include="README.md" Pack="true" PackagePath="" />
         <Compile Remove="**\*" />
