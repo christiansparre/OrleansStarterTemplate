@@ -3,7 +3,6 @@
     "path": "OrleansStarterTemplate.AppHost/OrleansStarterTemplate.AppHost.csproj"
   },
   "sdk": {
-    "version": "17.1.0-preview.1.26562.9"
-  },
-  "channel": "daily"
+    "version": "17.0.0"
+  }
 }

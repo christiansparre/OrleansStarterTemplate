@@ -5,15 +5,15 @@ A simple starter template with the projects needed to get started exploring Orle
 ## Requirements
 
 - [.NET 11 SDK](https://dotnet.microsoft.com/download/dotnet/11.0)
-- Aspire CLI `17.1.0-preview.1` or newer from the daily channel. The template uses prerelease Aspire packages from the daily feed (configured in the included `nuget.config`)
+- [Aspire CLI](https://aspire.dev) `17.0.0` or newer. Update an existing install with
 
   ```
-  aspire update --self --channel daily
+  aspire update --self
   ```
-- A container runtime for the Azurite storage emulator: Docker, Podman or WSL containers (`wslc`). Docker and Podman are preferred if installed. For WSL containers you need WSL `3.0.4` or newer, currently a prerelease:
+- A container runtime for the Azurite storage emulator: Docker, Podman or WSL containers (`wslc`). Docker and Podman are preferred if installed. For WSL containers you need WSL `3.0.4` or newer:
 
   ```
-  wsl --update --pre-release
+  wsl --update
   ```
 
 ## Install
